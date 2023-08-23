@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // middlewares
 
 // enable cors
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.options("*", cors());
 
 app.use(express.json());
