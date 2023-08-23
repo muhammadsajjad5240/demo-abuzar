@@ -206,6 +206,8 @@ app.get("/total-records", async (req, res) => {
   }
 });
 
+app.use("/api", router);
+
 // connection
 app.listen(1337, () => {
   console.log("server started successfully");
