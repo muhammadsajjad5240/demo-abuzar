@@ -8,8 +8,6 @@ const bcrypt = require("bcryptjs");
 const User = require("./models/user.model");
 const Form = require("./models/form.model");
 
-const router = express.Router();
-
 const app = express();
 
 // parse json request body
@@ -208,8 +206,6 @@ app.get("/total-records", async (req, res) => {
     res.status(500).json({ error: "Error fetching count" });
   }
 });
-
-app.use("/", router);
 
 // connection
 app.listen(1337, () => {
