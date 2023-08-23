@@ -31,29 +31,30 @@ app.get("/", async (req, res) => {
 
 // requests
 app.post("/login", async (req, res) => {
-  const user = await User.findOne({
-    email: req.body.email,
-  });
-  if (user) {
-    const isValidPassword = await bcrypt.compare(
-      req.body.password,
-      user.password
-    );
-    if (isValidPassword) {
-      const token = jwt.sign(
-        {
-          name: user.name,
-          email: user.email,
-        },
-        "secretkeyhere"
-      );
-      res.json({ status: "ok", user: user, token: token });
-    } else {
-      res.json({ status: "error", user: false });
-    }
-  } else {
-    res.json({ status: "error", user: false });
-  }
+  res.send("true");
+  // const user = await User.findOne({
+  //   email: req.body.email,
+  // });
+  // if (user) {
+  //   const isValidPassword = await bcrypt.compare(
+  //     req.body.password,
+  //     user.password
+  //   );
+  //   if (isValidPassword) {
+  //     const token = jwt.sign(
+  //       {
+  //         name: user.name,
+  //         email: user.email,
+  //       },
+  //       "secretkeyhere"
+  //     );
+  //     res.json({ status: "ok", user: user, token: token });
+  //   } else {
+  //     res.json({ status: "error", user: false });
+  //   }
+  // } else {
+  //   res.json({ status: "error", user: false });
+  // }
 });
 
 app.post("/register", async (req, res) => {
