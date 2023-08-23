@@ -10,8 +10,6 @@ const Form = require("./models/form.model");
 
 const app = express();
 
-const router = express.Router();
-
 // parse json request body
 app.use(express.json());
 
@@ -32,7 +30,7 @@ app.get("/", async (req, res) => {
 });
 
 // requests
-router.post("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
   res.send("true");
   // const user = await User.findOne({
   //   email: req.body.email,
@@ -57,6 +55,10 @@ router.post("/login", async (req, res) => {
   // } else {
   //   res.json({ status: "error", user: false });
   // }
+});
+
+app.get("/login", async (req, res) => {
+  res.send("get login");
 });
 
 // app.post("/register", async (req, res) => {
@@ -205,8 +207,6 @@ app.get("/total-records", async (req, res) => {
     res.status(500).json({ error: "Error fetching count" });
   }
 });
-
-app.use("/api", router);
 
 // connection
 app.listen(1337, () => {
