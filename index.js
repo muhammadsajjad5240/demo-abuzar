@@ -197,14 +197,14 @@ router.post("/login", async (req, res) => {
 //   }
 // });
 
-// app.get("/total-records", async (req, res) => {
-//   try {
-//     const count = await Form.countDocuments();
-//     res.json({ count });
-//   } catch (error) {
-//     res.status(500).json({ error: "Error fetching count" });
-//   }
-// });
+app.get("/total-records", async (req, res) => {
+  try {
+    const count = await Form.countDocuments();
+    res.json({ count });
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching count" });
+  }
+});
 
 app.use("/api", router);
 
