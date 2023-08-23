@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 // middlewares
 
 // enable cors
-app.use(cors({ origin: "*" }));
 app.options("*", cors());
+app.use(cors({ origin: "http://localhost:3000/auth/login" }));
 
 app.use(express.json());
 
