@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
 });
 
 // requests
-app.post("/login", async (req, res) => {
+app.get("/login", async (req, res) => {
   res.send("true");
   // const user = await User.findOne({
   //   email: req.body.email,
