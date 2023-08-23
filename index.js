@@ -17,7 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // middlewares
-// app.use(cors({ origin: '*' }));
+
+// enable cors
+app.use(cors());
+app.options("*", cors());
+
 app.use(express.json());
 
 // mongoose connection
