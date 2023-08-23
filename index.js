@@ -25,8 +25,8 @@ mongoose.connect(
   "mongodb+srv://abuzar:az122333@cluster0.nfyjvj6.mongodb.net/muraqba-hall?retryWrites=true&w=majority"
 );
 
-app.get("/", (req, res) => {
-  res.send("Hello, world");
+app.get("/", async (req, res) => {
+  res.status(200).send(await User.find());
 });
 
 // requests
