@@ -10,6 +10,8 @@ const Form = require("./models/form.model");
 
 const app = express();
 
+const router = express.Router();
+
 // parse json request body
 app.use(express.json());
 
@@ -30,7 +32,7 @@ app.get("/", async (req, res) => {
 });
 
 // requests
-app.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   res.send("true");
   // const user = await User.findOne({
   //   email: req.body.email,
